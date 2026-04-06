@@ -10,7 +10,6 @@ const SolutionsBento = () => {
           tag="Featured Product"
           index={0}
           title="Uniceps Ecosystem"
-          imageSrc="/mockup.png"
           href="https://uniceps.trio-verse.com"
           description="A dual-platform management system for gym chains and athletes. Real-time sync, cloud-based architecture."
           className="md:col-span-2 min-h-87.5 flex flex-col justify-end"
