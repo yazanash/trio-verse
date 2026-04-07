@@ -79,7 +79,7 @@ export default function ContactPortal() {
 
           {/* Form Area */}
           <form className="p-6 grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div className="space-y-2">
+            <div className="col-span-2 md:col-span-1 space-y-2">
               <label className="text-[10px] uppercase tracking-widest text-slate-500 ml-2">
                 Identify
               </label>
@@ -89,7 +89,7 @@ export default function ContactPortal() {
                 className="w-full p-4 bg-white/5 border border-white/10 rounded-2xl text-white placeholder:text-slate-600 focus:border-brand-blue outline-none transition-all"
               />
             </div>
-            <div className="space-y-2">
+            <div className="col-span-2 md:col-span-1 space-y-2">
               <label className="text-[10px] uppercase tracking-widest text-slate-500 ml-2">
                 Reach
               </label>
