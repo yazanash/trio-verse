@@ -9,7 +9,7 @@ const SolutionsBento = () => {
         <SolutionCard
           tag="Featured Product"
           index={0}
-          title="Uniceps Ecosystem"
+          title="Custom App Development"
           href="https://uniceps.trio-verse.com"
           description="A dual-platform management system for gym chains and athletes. Real-time sync, cloud-based architecture."
           className="md:col-span-2 min-h-87.5 flex flex-col justify-end"
@@ -19,7 +19,7 @@ const SolutionsBento = () => {
         <SolutionCard
           index={1}
           tag="Agency Partner"
-          title="Custom Scalable Apps"
+          title="NGO & Data Systems"
           description="Turning complex business logic into high-performance web and mobile applications."
           className="md:col-span-1"
         />
@@ -28,7 +28,7 @@ const SolutionsBento = () => {
         <SolutionCard
           index={2}
           tag="Social Impact"
-          title="Data Intelligence"
+          title="Legacy System Migration"
           description="Advanced statistical systems for NGOs to manage distribution and aid tracking with zero error margin."
           className="md:col-span-1"
         />

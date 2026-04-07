@@ -1,8 +1,8 @@
 "use client";
 import React from "react";
 import {
-  FaFacebookF,
-  FaInstagram,
+  FaLinkedinIn,
+  FaGithub,
   FaWhatsapp,
   FaEnvelope,
 } from "react-icons/fa6";
@@ -17,81 +17,112 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
           {/* العمود الأول: البراند */}
           <div className="col-span-1 md:col-span-2">
-            <h3 className="text-xl font-bold bg-logo-gradient bg-clip-text text-transparent mb-4">
+            <h3 className="text-2xl font-bold bg-logo-gradient bg-clip-text text-transparent mb-4 tracking-tighter">
               TrioVerse Labs
             </h3>
-            <p className="text-slate-500 text-sm leading-relaxed max-w-sm">
-              Architecting the next generation of digital ecosystems. Precision,
-              scalability, and innovation in every line of code.
+            <p className="text-slate-500 text-sm leading-relaxed max-w-sm font-light">
+              Architecting the next generation of digital ecosystems. Precision
+              engineering for agencies, startups, and global consultants.
             </p>
           </div>
 
           {/* العمود الثاني: روابط سريعة */}
           <div>
-            <h4 className="text-white text-sm font-semibold mb-4 uppercase tracking-widest">
+            <h4 className="text-white text-[10px] font-bold mb-6 uppercase tracking-[0.3em] opacity-50">
               Navigation
             </h4>
-            <ul className="space-y-2 text-sm text-slate-500">
+            <ul className="space-y-3 text-sm text-slate-500">
               <li>
-                <a href="#" className="hover:text-brand-blue transition-colors">
+                <a
+                  href="#home"
+                  className="hover:text-brand-blue transition-colors"
+                >
                   Home
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-brand-blue transition-colors">
+                <a
+                  href="#solutions"
+                  className="hover:text-brand-blue transition-colors"
+                >
                   Solutions
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-brand-blue transition-colors">
-                  Uniceps
+                <a
+                  href="#uniceps"
+                  className="hover:text-brand-blue transition-colors"
+                >
+                  Uniceps Case
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-brand-blue transition-colors">
-                  Partnership
+                <a
+                  href="#tech-stack"
+                  className="hover:text-brand-blue transition-colors"
+                >
+                  Our Tech
                 </a>
               </li>
             </ul>
           </div>
 
-          {/* العمود الثالث: التواصل والسوشال */}
+          {/* العمود الثالث: التواصل */}
           <div>
-            <h4 className="text-white text-sm font-semibold mb-4 uppercase tracking-widest">
+            <h4 className="text-white text-[10px] font-bold mb-6 uppercase tracking-[0.3em] opacity-50">
               Connect
             </h4>
-            <div className="flex gap-4">
+            <div className="flex gap-3">
               <SocialIcon
-                href="https://linkedin.com"
-                icon={<FaFacebookF size={18} />}
+                href="https://linkedin.com/company/trioverse"
+                icon={<FaLinkedinIn size={18} />}
               />
               <SocialIcon
-                href="https://github.com"
-                icon={<FaInstagram size={18} />}
+                href="https://github.com/trioverse"
+                icon={<FaGithub size={18} />}
               />
               <SocialIcon
-                href="https://twitter.com"
+                href="https://wa.me/yournumber"
                 icon={<FaWhatsapp size={18} />}
               />
               <SocialIcon
-                href="mailto:info@trioverse.com"
+                href="mailto:contact@trio-verse.com"
                 icon={<FaEnvelope size={18} />}
               />
             </div>
           </div>
         </div>
 
-        {/* السطر السفلي */}
-        <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-slate-600 text-xs">
-            © {currentYear} TrioVerse Labs. All rights reserved.
-          </p>
-          <div className="flex gap-6 text-xs text-slate-600">
-            <a href="#" className="hover:text-slate-400">
+        {/* السطر السفلي: الحقوق والحالة */}
+        <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
+          <div className="flex flex-col gap-2 text-center md:text-left">
+            <p className="text-slate-600 text-[10px] md:text-xs">
+              © {currentYear} TrioVerse Labs. All rights reserved.
+            </p>
+            {/* Status Indicator الفخم */}
+            <div className="flex items-center justify-center md:justify-start gap-2">
+              <span className="relative flex h-1.5 w-1.5">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-emerald-500"></span>
+              </span>
+              <span className="text-[9px] text-slate-500 font-mono tracking-wider uppercase">
+                Systems Operational // 2 project slots available
+              </span>
+            </div>
+          </div>
+
+          <div className="flex gap-6 text-[10px] text-slate-500 font-medium">
+            <a
+              href="/privacy"
+              className="hover:text-white transition-colors uppercase tracking-widest"
+            >
               Privacy Policy
             </a>
-            <a href="#" className="hover:text-slate-400">
-              Terms of Service
+            <a
+              href="/terms"
+              className="hover:text-white transition-colors uppercase tracking-widest"
+            >
+              Terms
             </a>
           </div>
         </div>
@@ -100,15 +131,14 @@ export default function Footer() {
   );
 }
 
-// مكون صغير للأيقونات لتقليل تكرار الكود
 function SocialIcon({ href, icon }: { href: string; icon: React.ReactNode }) {
   return (
     <motion.a
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      whileHover={{ y: -3, color: "#3b82f6" }}
-      className="p-2 rounded-lg bg-white/5 border border-white/10 text-slate-400 transition-colors"
+      whileHover={{ y: -3, backgroundColor: "rgba(255,255,255,0.05)" }}
+      className="p-2.5 rounded-xl bg-white/3 border border-white/10 text-slate-400 hover:text-brand-blue transition-all"
     >
       {icon}
     </motion.a>

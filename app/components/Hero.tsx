@@ -3,6 +3,12 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 
 const Hero = () => {
+  const scrollTo = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
   return (
     <section
       id="home"
@@ -44,6 +50,7 @@ const Hero = () => {
 
         <div className="flex gap-4 justify-center">
           <button
+          onClick={() => scrollTo("solutions")}
             className="px-8 py-3 rounded-xl border border-white/10 bg-white/5 
                                  hover:bg-brand-blue/10 hover:border-brand-blue/50 transition-all font-medium"
           >

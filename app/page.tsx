@@ -11,6 +11,9 @@ import Founders from "./components/Founders";
 import LogoCloud from "./components/LogoCloud";
 import Hero from "./components/Hero";
 import SolutionsBento from "./components/SolutionsBento";
+import UnicepsSection from "./components/UnicepsShowcase";
+import TechStack from "./components/TechStack";
+import TalentSection from "./components/TalentSection";
 
 export default function Home() {
   return (
@@ -21,22 +24,21 @@ export default function Home() {
         <LogoCloud />
       </section> */}
       <SolutionsBento />
+      <UnicepsSection />
+
       <section
         id="standars"
-        className="min-h-screen flex items-center justify-center py-10 snap-start"
+        className="min-h-screen flex items-center justify-center snap-start"
       >
         <CorePillars />
       </section>
-      <section
-        id="founders"
-        className="min-h-screen flex items-center justify-center py-10 snap-start"
-      >
-        <Founders />
-      </section>
-      {/* 4. Partnership Portal Section */}
+
+      <TechStack />
+
+      <TalentSection />
       <section
         id="partners"
-        className="min-h-screen flex items-center justify-center py-10 snap-start"
+        className="min-h-screen flex items-center justify-center snap-start"
       >
         <PartnershipPortal />
       </section>
