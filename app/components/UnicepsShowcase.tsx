@@ -2,8 +2,11 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { ArrowUpRight, CheckCircle2 } from "lucide-react";
+import { useLanguageStore } from "@/store/useLanguageStore";
 
 export default function UnicepsSection() {
+  const { dict, lang } = useLanguageStore();
+  const { uniceps } = dict;
   return (
     <section id="uniceps" className="w-full max-w-6xl mx-auto px-6 py-4">
       <div className="relative rounded-[2.5rem] bg-white/2 border border-white/5 overflow-hidden">
@@ -19,29 +22,23 @@ export default function UnicepsSection() {
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-brand-blue"></span>
               </span>
               <span className="text-[10px] font-bold uppercase tracking-widest">
-                Our Featured Product
+                {uniceps.badge}
               </span>
             </div>
 
             <h2 className="text-4xl md:text-5xl font-bold text-white tracking-tighter leading-tight">
-              Uniceps: The Future of <br />
+              {uniceps.title1} <br />
               <span className="text-slate-500 italic font-light">
-                Fitness Engineering.
+                {uniceps.title2}
               </span>
             </h2>
 
             <p className="text-slate-400 text-lg font-light leading-relaxed max-w-md">
-              A robust dual-platform ecosystem built for high-performance gym
-              chains. Real-time synchronization between club management and
-              athlete mobile apps.
+              {uniceps.description}
             </p>
 
             <ul className="space-y-3">
-              {[
-                "Cloud-Native Architecture",
-                "Real-time Data Sync",
-                "Cross-Platform Experience",
-              ].map((feat) => (
+              {uniceps.features.map((feat) => (
                 <li
                   key={feat}
                   className="flex items-center gap-3 text-slate-300 text-sm font-medium"
@@ -58,10 +55,10 @@ export default function UnicepsSection() {
               }
               className="group flex items-center gap-2 bg-white text-black px-8 py-4 rounded-full font-bold hover:bg-brand-blue hover:text-white transition-all active:scale-95 shadow-xl shadow-white/5"
             >
-              Visit Uniceps
+              {uniceps.cta}
               <ArrowUpRight
-                size={18}
-                className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"
+                size={20}
+                className={`${lang === "ar" ? "-rotate-90 group-hover:rotate-0" : ""} transition-transform duration-300`}
               />
             </button>
           </div>

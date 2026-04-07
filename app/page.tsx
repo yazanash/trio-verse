@@ -19,6 +19,7 @@ export default function Home() {
   return (
     <main className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden">
       {/* الإضاءة الخلفية الناعمة (Ambient Glow) */}
+
       <Hero />
       {/* <section className="flex items-center justify-center py-10 snap-start">
         <LogoCloud />

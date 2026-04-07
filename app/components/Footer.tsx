@@ -7,8 +7,11 @@ import {
   FaEnvelope,
 } from "react-icons/fa6";
 import { motion } from "framer-motion";
+import { useLanguageStore } from "@/store/useLanguageStore";
 
 export default function Footer() {
+  const { dict, lang } = useLanguageStore();
+  const { footer } = dict;
   const currentYear = new Date().getFullYear();
 
   return (
@@ -21,56 +24,33 @@ export default function Footer() {
               TrioVerse Labs
             </h3>
             <p className="text-slate-500 text-sm leading-relaxed max-w-sm font-light">
-              Architecting the next generation of digital ecosystems. Precision
-              engineering for agencies, startups, and global consultants.
+              {footer.description}
             </p>
           </div>
 
           {/* العمود الثاني: روابط سريعة */}
           <div>
             <h4 className="text-white text-[10px] font-bold mb-6 uppercase tracking-[0.3em] opacity-50">
-              Navigation
+              {footer.navTitle}
             </h4>
             <ul className="space-y-3 text-sm text-slate-500">
-              <li>
-                <a
-                  href="#home"
-                  className="hover:text-brand-blue transition-colors"
-                >
-                  Home
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#solutions"
-                  className="hover:text-brand-blue transition-colors"
-                >
-                  Solutions
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#uniceps"
-                  className="hover:text-brand-blue transition-colors"
-                >
-                  Uniceps Case
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#tech-stack"
-                  className="hover:text-brand-blue transition-colors"
-                >
-                  Our Tech
-                </a>
-              </li>
+              {Object.entries(footer.links).map(([key, label]) => (
+                <li key={key}>
+                  <a
+                    href={`#${key}`}
+                    className="hover:text-brand-blue transition-colors"
+                  >
+                    {label}
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
 
           {/* العمود الثالث: التواصل */}
           <div>
             <h4 className="text-white text-[10px] font-bold mb-6 uppercase tracking-[0.3em] opacity-50">
-              Connect
+              {footer.connect}
             </h4>
             <div className="flex gap-3">
               <SocialIcon
@@ -97,16 +77,13 @@ export default function Footer() {
         <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="flex flex-col gap-2 text-center md:text-left">
             <p className="text-slate-600 text-[10px] md:text-xs">
-              © {currentYear} TrioVerse Labs. All rights reserved.
+              © {currentYear} TrioVerse Labs. {footer.rights}
             </p>
             {/* Status Indicator الفخم */}
             <div className="flex items-center justify-center md:justify-start gap-2">
               <span className="relative flex h-1.5 w-1.5">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-emerald-500"></span>
-              </span>
-              <span className="text-[9px] text-slate-500 font-mono tracking-wider uppercase">
-                Systems Operational // 2 project slots available
               </span>
             </div>
           </div>
@@ -116,13 +93,13 @@ export default function Footer() {
               href="/privacy"
               className="hover:text-white transition-colors uppercase tracking-widest"
             >
-              Privacy Policy
+              {footer.legal.privacy}
             </a>
             <a
               href="/terms"
               className="hover:text-white transition-colors uppercase tracking-widest"
             >
-              Terms
+              {footer.legal.terms}
             </a>
           </div>
         </div>

@@ -1,40 +1,26 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
-import { Layers, Database, Cpu, Globe } from "lucide-react";
-
-const techGroups = [
-  {
-    category: "Frontend Excellence",
-    icon: <Layers size={20} className="text-brand-blue" />,
-    tools: ["Next.js", "React", "Tailwind CSS", "Framer Motion"],
-    description:
-      "Creating fluid, SEO-optimized, and high-performance user interfaces.",
-  },
-  {
-    category: "Backend & Systems",
-    icon: <Cpu size={20} className="text-brand-blue" />,
-    tools: [".NET Core", "Go (Golang)", "Node.js", "Python"],
-    description:
-      "Building robust APIs and microservices designed for high concurrency.",
-  },
-  {
-    category: "Data & Storage",
-    icon: <Database size={20} className="text-brand-blue" />,
-    tools: ["PostgreSQL", "Redis", "MongoDB", "Elasticsearch"],
-    description:
-      "Architecting secure, scalable, and real-time data structures.",
-  },
-  {
-    category: "Cloud & DevOps",
-    icon: <Globe size={20} className="text-brand-blue" />,
-    tools: ["Docker", "Kubernetes", "AWS", "Vercel"],
-    description:
-      "Ensuring 99.9% uptime with modern deployment and scaling strategies.",
-  },
-];
+import {
+  Layers,
+  Database,
+  Cpu,
+  Globe,
+  Smartphone,
+  Monitor,
+  Server,
+} from "lucide-react";
+import { useLanguageStore } from "@/store/useLanguageStore";
 
 export default function TechStack() {
+  const { dict, lang } = useLanguageStore();
+  const { tech } = dict;
+  const icons = [
+    <Layers size={20} className="text-brand-blue" key="web" />,
+    <Smartphone size={20} className="text-brand-blue" key="mobile" />,
+    <Monitor size={20} className="text-brand-blue" key="core" />,
+    <Server size={20} className="text-brand-blue" key="infra" />,
+  ];
   return (
     <section
       id="techstack"
@@ -43,23 +29,21 @@ export default function TechStack() {
       <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
         <div className="max-w-xl text-left">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 tracking-tighter">
-            Our <span className="text-brand-blue italic">Tech-DNA.</span>
+            {tech.title}{" "}
+            <span className="text-brand-blue italic">{tech.titleGradient}</span>
           </h2>
-          <p className="text-slate-400 font-light text-lg">
-            We don't follow hype. We select industry-leading technologies to
-            build future-proof ecosystems that scale with your business.
-          </p>
+          <p className="text-slate-400 font-light text-lg">{tech.subtitle}</p>
         </div>
         <div className="hidden md:block text-right">
           <p className="text-[10px] uppercase tracking-[0.4em] text-slate-600 font-bold mb-2">
-            Build for Scale
+            {tech.badge}
           </p>
           <div className="h-px w-32 bg-linear-to-l from-brand-blue/50 to-transparent ml-auto" />
         </div>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        {techGroups.map((group, idx) => (
+        {tech.groups.map((group, idx) => (
           <motion.div
             key={idx}
             initial={{ opacity: 0, scale: 0.95 }}
@@ -70,7 +54,7 @@ export default function TechStack() {
           >
             <div className="flex items-start justify-between mb-8">
               <div className="p-3 rounded-2xl bg-brand-blue/5 border border-brand-blue/10">
-                {group.icon}
+                {icons[idx]}
               </div>
               <div className="flex gap-2">
                 {group.tools.slice(0, 2).map((t) => (

@@ -1,26 +1,11 @@
 "use client";
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-
-const inquiryTypes = [
-  {
-    id: "project",
-    title: "Direct Project",
-    desc: "Build a custom ecosystem for your business.",
-  },
-  {
-    id: "partnership",
-    title: "Strategic Partner",
-    desc: "Tech-arm support for agencies & consultants.",
-  },
-  {
-    id: "other",
-    title: "General Inquiry",
-    desc: "Consultations, technical audits, or just a hi.",
-  },
-];
+import { useLanguageStore } from "@/store/useLanguageStore";
 
 export default function ContactPortal() {
+  const { dict, lang } = useLanguageStore();
+  const { contact } = dict;
   const [selected, setSelected] = useState("project");
 
   return (
@@ -29,20 +14,19 @@ export default function ContactPortal() {
         {/* الجانب الأيسر: النص التسويقي */}
         <div className="lg:col-span-2">
           <h2 className="text-4xl md:text-6xl font-bold text-white mb-8 tracking-tighter leading-tight">
-            Ready to <br />
+            {contact.title1} <br />
             <span className="bg-logo-gradient bg-clip-text text-transparent">
-              Scale Up?
+              {contact.title2}
             </span>
           </h2>
           <p className="text-lg text-slate-400 font-light leading-relaxed mb-8">
-            Whether you are an ambitious startup, a growing agency, or an
-            enterprise seeking stability—we’re here to engineer your success.
+            {contact.description}
           </p>
 
           <div className="flex items-center gap-4 p-4 rounded-2xl bg-white/5 border border-white/10 w-fit">
             <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
             <span className="text-sm text-slate-300 font-medium">
-              Available for new projects in 2026
+              {contact.status}
             </span>
           </div>
         </div>
@@ -51,7 +35,7 @@ export default function ContactPortal() {
         <div className="lg:col-span-3 bg-white/2 p-2 rounded-2xl border border-white/5 shadow-2xl relative overflow-hidden">
           {/* Tabs Selection */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-2 p-2 bg-black/40 rounded-2xl mb-6">
-            {inquiryTypes.map((type) => (
+            {contact.types.map((type) => (
               <button
                 key={type.id}
                 onClick={() => setSelected(type.id)}
@@ -81,30 +65,30 @@ export default function ContactPortal() {
           <form className="p-6 grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="col-span-2 md:col-span-1 space-y-2">
               <label className="text-[10px] uppercase tracking-widest text-slate-500 ml-2">
-                Identify
+                {contact.labels.identify}
               </label>
               <input
                 type="text"
-                placeholder="Name / Organization"
+                placeholder={contact.labels.namePlaceholder}
                 className="w-full p-4 bg-white/5 border border-white/10 rounded-2xl text-white placeholder:text-slate-600 focus:border-brand-blue outline-none transition-all"
               />
             </div>
             <div className="col-span-2 md:col-span-1 space-y-2">
               <label className="text-[10px] uppercase tracking-widest text-slate-500 ml-2">
-                Reach
+                {contact.labels.reach}
               </label>
               <input
                 type="email"
-                placeholder="Email Address"
+                placeholder={contact.labels.emailPlaceholder}
                 className="w-full p-4 bg-white/5 border border-white/10 rounded-2xl text-white placeholder:text-slate-600 focus:border-brand-blue outline-none transition-all"
               />
             </div>
             <div className="col-span-2 space-y-2">
               <label className="text-[10px] uppercase tracking-widest text-slate-500 ml-2">
-                Context
+                {contact.labels.context}
               </label>
               <textarea
-                placeholder="Tell us about your mission..."
+                placeholder={contact.labels.messagePlaceholder}
                 rows={4}
                 className="w-full p-4 bg-white/5 border border-white/10 rounded-2xl text-white placeholder:text-slate-600 focus:border-brand-blue outline-none transition-all resize-none"
               />
@@ -114,7 +98,7 @@ export default function ContactPortal() {
               type="submit"
               className="col-span-2 bg-logo-gradient p-5 rounded-2xl text-white font-bold shadow-xl hover:shadow-brand-blue/20 active:scale-[0.98] transition-all flex items-center justify-center gap-3"
             >
-              Initialize Sync
+             {contact.labels.submit}
               <svg
                 width="18"
                 height="18"

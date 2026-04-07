@@ -1,0 +1,164 @@
+{
+  "hero": {
+    "titleMain": "Reliability in",
+    "titleGradient": "Every Logic.",
+    "description": "From Uniceps to complex NGO ecosystems, we architect high-concurrency systems engineered for global scale and local impact.",
+    "cta": "Talk to us Now"
+  },
+  "solutions": {
+    "items": [
+      {
+        "id": "app-dev",
+        "tag": "Core Service",
+        "title": "Bespoke Ecosystem Development",
+        "description": "Engineering full-stack web and mobile environments with real-time sync and cloud-native resilience."
+      },
+      {
+        "id": "data-systems",
+        "tag": "Specialized",
+        "title": "NGO & Statistical Architectures",
+        "description": "High-precision data management tools for field operations and aid tracking with zero-tolerance for error."
+      },
+      {
+        "id": "migration",
+        "tag": "Optimization",
+        "title": "Legacy Modernization",
+        "description": "Refactoring outdated software into high-performance environments while maintaining absolute data integrity."
+      },
+      {
+        "id": "it-infra",
+        "tag": "Technical",
+        "title": "Infrastructure Support",
+        "description": "Deep-level programmatic diagnostics and system recovery tools to ensure maximum operational uptime."
+      }
+    ]
+  },
+  "uniceps": {
+    "badge": "Flagship Solution",
+    "title1": "Uniceps: Ultimate Command",
+    "title2": "Fitness Management.",
+    "description": "A centralized ERP ecosystem that automates memberships, tracks financial velocity, and syncs seamlessly with an athlete-centric native mobile experience.",
+    "features": [
+      "Automated Membership Billing",
+      "Deep Financial Analytics & Reporting",
+      "Real-time Inventory & Staff Tracking",
+      "Native Athlete Performance App"
+    ],
+    "cta": "Experience Uniceps"
+  },
+  "pillars": {
+    "badge": "The Trio-Standard",
+    "title": "Built for ",
+    "titleGradient": "Performance.",
+    "subtitle": "We bridge the gap between complex engineering and reliable business solutions through our core operational pillars.",
+    "items": [
+      {
+        "title": "Data Sovereignty",
+        "desc": "Your data is your most valuable asset. We implement industry-leading encryption and strict privacy protocols by default."
+      },
+      {
+        "title": "Engineered Velocity",
+        "desc": "Leveraging high-performance stacks like .NET & Next.js to ensure lightning-fast execution and infrastructure scalability."
+      },
+      {
+        "title": "High Availability",
+        "desc": "Mission-critical systems require 99.9% uptime. We provide continuous monitoring and fail-safe cloud architectures."
+      },
+      {
+        "title": "Strategic Partnership",
+        "desc": "We don't just ship code; we act as your long-term technical arm, providing deep strategic support to ensure sustainable growth."
+      }
+    ]
+  },
+  "tech": {
+    "title": "Our ",
+    "titleGradient": "Tech-DNA.",
+    "subtitle": "We select industry-leading technologies to build future-proof ecosystems that scale with your mission.",
+    "badge": "Built for Scale",
+    "groups": [
+      {
+        "category": "Web Architecture",
+        "description": "Creating fluid, SEO-optimized, and high-performance interfaces using modern SSR frameworks.",
+        "tools": ["Next.js", "React", "Tailwind CSS", "Framer Motion"]
+      },
+      {
+        "category": "Cross-Platform Mobility",
+        "description": "Native-grade mobile experiences for iOS and Android from a single performant codebase.",
+        "tools": ["Flutter", "Dart", "Firebase", "App Store/Play Store"]
+      },
+      {
+        "category": "Systems & Logic",
+        "description": "Mission-critical enterprise logic and robust desktop applications built for high concurrency.",
+        "tools": [".NET Core", "Laravel", "AdonisJS", "WPF / MAUI"]
+      },
+      {
+        "category": "Infrastructure & Ops",
+        "description": "Managing high-availability servers and automated deployment pipelines for maximum uptime.",
+        "tools": ["Docker", "Nginx", "VPS Management", "CI/CD"]
+      }
+    ]
+  },
+  "talent": {
+    "badge": "Trio Talent Lab",
+    "title1": "Beyond a team,",
+    "title2": "a Tech Movement.",
+    "description": "We seek unconventional thinkers and raw talents to join our ecosystem. No CVs required—just your logic and your vision.",
+    "cta": "Join the Lab"
+  },
+  "contact": {
+    "title1": "Ready to",
+    "title2": "Sync Up?",
+    "description": "Whether you are an ambitious startup or an enterprise seeking stability—we’re here to engineer your success.",
+    "status": "Available for new projects in 2026",
+    "types": [
+      {
+        "id": "project",
+        "title": "Direct Project",
+        "desc": "Custom ecosystem build."
+      },
+      {
+        "id": "partnership",
+        "title": "Strategic Partner",
+        "desc": "Technical arm support."
+      },
+      {
+        "id": "other",
+        "title": "General Inquiry",
+        "desc": "Consultation or hello."
+      }
+    ],
+    "labels": {
+      "identify": "Identity",
+      "reach": "Reach",
+      "context": "Context",
+      "namePlaceholder": "Name / Organization",
+      "emailPlaceholder": "Email Address",
+      "messagePlaceholder": "Tell us about your mission...",
+      "submit": "Initialize Sync"
+    }
+  },
+  "footer": {
+    "description": "Architecting the next generation of digital ecosystems. Precision engineering for agencies, startups, and global consultants.",
+    "navTitle": "Navigation",
+    "links": {
+      "home": "Home",
+      "solutions": "Solutions",
+      "case": "Uniceps Case",
+      "tech": "Our Tech"
+    },
+    "connect": "Connect",
+    "rights": "All rights reserved.",
+    "status": "Systems Operational // 2 project slots available",
+    "legal": {
+      "privacy": "Privacy Policy",
+      "terms": "Terms"
+    }
+  },
+  "nav": {
+    "home": "Home",
+    "solutions": "Solutions",
+    "standards": "Standards",
+    "tech": "Tech",
+    "cta": "Sync Now"
+  }
+}

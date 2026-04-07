@@ -1,46 +1,32 @@
+"use client";
 import React from "react";
 import SolutionCard from "./SolutionCard";
+import { useLanguageStore } from "@/store/useLanguageStore";
 
 const SolutionsBento = () => {
+  const { dict } = useLanguageStore();
+  const { items } = dict.solutions;
   return (
     <section id="solutions" className="w-full max-w-6xl mx-auto px-6 py-32">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {/* Uniceps - The Big Player */}
-        <SolutionCard
-          tag="Featured Product"
-          index={0}
-          title="Custom App Development"
-          href="https://uniceps.trio-verse.com"
-          description="A dual-platform management system for gym chains and athletes. Real-time sync, cloud-based architecture."
-          className="md:col-span-2 min-h-87.5 flex flex-col justify-end"
-        />
+        {items.map((item, index) => {
+          // توزيع المساحات: الأول والأخير كبار (col-span-2)
+          const isLarge = index === 0 || index === 3;
 
-        {/* Custom Dev */}
-        <SolutionCard
-          index={1}
-          tag="Agency Partner"
-          title="NGO & Data Systems"
-          description="Turning complex business logic into high-performance web and mobile applications."
-          className="md:col-span-1"
-        />
-
-        {/* NGO Support */}
-        <SolutionCard
-          index={2}
-          tag="Social Impact"
-          title="Legacy System Migration"
-          description="Advanced statistical systems for NGOs to manage distribution and aid tracking with zero error margin."
-          className="md:col-span-1"
-        />
-
-        {/* TrioNexus (The Open Source) */}
-        <SolutionCard
-          index={3}
-          tag="IT Infrastructure"
-          title="TrioNexus Core"
-          description="Open-source diagnostic tools for IT support teams. Solving boot issues and system failures programmatically."
-          className="md:col-span-2 min-h-62.5 flex flex-col justify-end"
-        />
+          return (
+            <SolutionCard
+              key={item.id}
+              index={index}
+              tag={item.tag}
+              title={item.title}
+              description={item.description}
+              className={`${
+                isLarge ? "md:col-span-2 min-h-80" : "md:col-span-1"
+              } flex flex-col justify-end transition-all duration-500`}
+            />
+          );
+        })}
       </div>
     </section>
   );

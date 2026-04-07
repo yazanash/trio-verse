@@ -2,9 +2,19 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 // غيرت الأيقونات لـ Lucide بس بقياس أكبر
-import { Home, LayoutGrid, Shield, Cpu, MessageSquare } from "lucide-react";
+import {
+  Home,
+  LayoutGrid,
+  Shield,
+  Cpu,
+  MessageSquare,
+  Languages,
+} from "lucide-react";
+import { useLanguageStore } from "@/store/useLanguageStore";
 
 export default function FloatingDock() {
+  const { dict, lang, setLanguage } = useLanguageStore();
+  const { nav } = dict;
   const [activeSection, setActiveSection] = useState("home");
 
   useEffect(() => {
@@ -50,7 +60,9 @@ export default function FloatingDock() {
       element.scrollIntoView({ behavior: "smooth" });
     }
   };
-
+  const toggleLanguage = () => {
+    setLanguage(lang === "en" ? "ar" : "en");
+  };
   return (
     <motion.nav
       initial={{ y: 100, x: "-50%", opacity: 0 }}
@@ -60,7 +72,7 @@ export default function FloatingDock() {
       <div className="flex items-center gap-2 md:gap-3 px-2 py-2 md:px-3 md:py-3 rounded-3xl bg-black/70 backdrop-blur-3xl border border-white/15 shadow-[0_25px_50px_-12px_rgba(0,0,0,0.7)]">
         <NavButton
           icon={<Home size={20} />}
-          label="Home"
+          label={nav.home}
           active={activeSection === "home"}
           onClick={() => scrollTo("home")}
         />
@@ -69,7 +81,7 @@ export default function FloatingDock() {
 
         <NavButton
           icon={<LayoutGrid size={20} />}
-          label="Solutions"
+          label={nav.solutions}
           active={activeSection === "solutions"}
           onClick={() => scrollTo("solutions")}
         />
@@ -78,7 +90,7 @@ export default function FloatingDock() {
 
         <NavButton
           icon={<Shield size={20} />}
-          label="Standards"
+          label={nav.standards}
           active={activeSection === "standars"}
           onClick={() => scrollTo("standars")}
         />
@@ -88,11 +100,24 @@ export default function FloatingDock() {
         {/* أيقونة الـ Tech Stack (بدل الفاوندرز) */}
         <NavButton
           icon={<Cpu size={20} />}
-          label="Tech"
+          label={nav.tech}
           active={activeSection === "techstack"}
           onClick={() => scrollTo("techstack")}
         />
-
+        <motion.button
+          whileHover={{ scale: 1.1, backgroundColor: "rgba(255,255,255,0.05)" }}
+          whileTap={{ scale: 0.9 }}
+          onClick={toggleLanguage}
+          className="p-2.5 rounded-xl text-brand-blue flex items-center justify-center transition-all"
+          title={lang === "en" ? "العربية" : "English"}
+        >
+          <div className="relative">
+            <Languages size={18} />
+            <span className="absolute -top-1 -right-1 text-[7px] font-bold bg-blue-700 text-black px-1 rounded-sm uppercase">
+              {lang === "en" ? "AR" : "EN"}
+            </span>
+          </div>
+        </motion.button>
         <motion.button
           whileHover={{ scale: 1.05, y: -2 }}
           whileTap={{ scale: 0.95 }}
@@ -100,7 +125,7 @@ export default function FloatingDock() {
           className="ml-2 bg-logo-gradient px-4 py-2 md:px-6 md:py-2.5 rounded-full text-white shadow-lg flex items-center justify-center transition-all"
         >
           <span className="hidden md:block text-sm text-nowrap font-bold tracking-tight">
-            Partner Up
+            {nav.cta}
           </span>
           <span className="md:hidden">
             <MessageSquare size={20} />

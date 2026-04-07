@@ -1,8 +1,11 @@
+"use client";
 import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-
+import { useLanguageStore } from "@/store/useLanguageStore";
 const Hero = () => {
+  const { dict } = useLanguageStore(); // سحب القاموس
+  const { hero } = dict;
   const scrollTo = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
@@ -37,24 +40,23 @@ const Hero = () => {
         </div>
 
         <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-6">
-          Reliability in{" "}
+          {hero.titleMain}{" "}
           <span className="bg-logo-gradient bg-clip-text text-transparent">
-            Every Bit.
+            {hero.titleGradient}
           </span>
         </h1>
 
         <p className="max-w-2xl mx-auto text-lg md:text-xl text-slate-400 font-light leading-relaxed mb-10">
-          We don't just write code; we architect scalable digital ecosystems
-          that drive real-world impact. From Uniceps to custom NGO solutions.
+          {hero.description}
         </p>
 
         <div className="flex gap-4 justify-center">
           <button
-          onClick={() => scrollTo("solutions")}
+            onClick={() => scrollTo("solutions")}
             className="px-8 py-3 rounded-xl border border-white/10 bg-white/5 
                                  hover:bg-brand-blue/10 hover:border-brand-blue/50 transition-all font-medium"
           >
-            Explore Solutions
+            {hero.cta}
           </button>
         </div>
       </motion.div>
