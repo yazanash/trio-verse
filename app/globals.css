@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 :root {
-  --background: #f8fafc; /* Slate 50 */
-  --foreground: #020617; /* Slate 950 */
+   --background: #020617; 
+    --foreground: #f8fafc;
   --brand-blue: #3b82f6;
   --brand-purple: #8b5cf6;
 }
@@ -21,12 +21,7 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #020617; 
-    --foreground: #f8fafc;
-  }
-}
+
 html {
   scroll-snap-type: y mandatory;
   scroll-behavior: smooth;

@@ -7,6 +7,37 @@ export default function ContactPortal() {
   const { dict, lang } = useLanguageStore();
   const { contact } = dict;
   const [selected, setSelected] = useState("project");
+  const [loading, setLoading] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setLoading(true);
+
+    // استخراج البيانات من الفورم (تأكد من إضافة id أو name للحقول)
+    const formData = {
+      name: (e.target as any)[0].value, // حقل الاسم
+      email: (e.target as any)[1].value, // حقل الإيميل
+      message: (e.target as any)[2].value, // حقل الرسالة
+      type: selected, // نوع الطلب من الـ Tabs
+    };
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        body: JSON.stringify(formData),
+        headers: { "Content-Type": "application/json" },
+      });
+
+      if (res.ok) {
+        alert("Sync Initialized Successfully!");
+        (e.target as HTMLFormElement).reset();
+      }
+    } catch (error) {
+      alert("Error syncing. Please try again.");
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <section className="w-full max-w-6xl mx-auto px-6 py-32 snap-start">
@@ -62,7 +93,10 @@ export default function ContactPortal() {
           </div>
 
           {/* Form Area */}
-          <form className="p-6 grid grid-cols-1 md:grid-cols-2 gap-4">
+          <form
+            className="p-6 grid grid-cols-1 md:grid-cols-2 gap-4"
+            onSubmit={handleSubmit}
+          >
             <div className="col-span-2 md:col-span-1 space-y-2">
               <label className="text-[10px] uppercase tracking-widest text-slate-500 ml-2">
                 {contact.labels.identify}
@@ -96,9 +130,10 @@ export default function ContactPortal() {
 
             <button
               type="submit"
+              disabled={loading}
               className="col-span-2 bg-logo-gradient p-5 rounded-2xl text-white font-bold shadow-xl hover:shadow-brand-blue/20 active:scale-[0.98] transition-all flex items-center justify-center gap-3"
             >
-             {contact.labels.submit}
+              {loading ? "Processing..." : contact.labels.submit}
               <svg
                 width="18"
                 height="18"

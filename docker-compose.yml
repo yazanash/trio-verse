@@ -1,0 +1,9 @@
+services:
+  trioverse-web:
+    build: .
+    container_name: trioverse-app
+    restart: always
+    ports:
+      - "3000:3000"
+    env_file:
+      - .env

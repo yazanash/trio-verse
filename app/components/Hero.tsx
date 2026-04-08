@@ -33,8 +33,8 @@ const Hero = () => {
           <Image
             src="/logo123.png"
             alt="TrioVerse Logo"
-            width={120}
-            height={120}
+            width={150}
+            height={150}
             className="drop-shadow-[0_0_15px_rgba(59,130,246,0.5)]"
           />
         </div>
@@ -51,13 +51,13 @@ const Hero = () => {
         </p>
 
         <div className="flex gap-4 justify-center">
-          <button
+          {/* <button
             onClick={() => scrollTo("solutions")}
             className="px-8 py-3 rounded-xl border border-white/10 bg-white/5 
                                  hover:bg-brand-blue/10 hover:border-brand-blue/50 transition-all font-medium"
           >
             {hero.cta}
-          </button>
+          </button> */}
         </div>
       </motion.div>
     </section>

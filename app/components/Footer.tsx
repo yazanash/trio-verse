@@ -5,6 +5,9 @@ import {
   FaGithub,
   FaWhatsapp,
   FaEnvelope,
+  FaFacebook,
+  FaFacebookF,
+  FaInstagram,
 } from "react-icons/fa6";
 import { motion } from "framer-motion";
 import { useLanguageStore } from "@/store/useLanguageStore";
@@ -54,19 +57,15 @@ export default function Footer() {
             </h4>
             <div className="flex gap-3">
               <SocialIcon
-                href="https://linkedin.com/company/trioverse"
-                icon={<FaLinkedinIn size={18} />}
+                href="https://facebook.com/trio3verse"
+                icon={<FaFacebookF size={18} />}
               />
               <SocialIcon
-                href="https://github.com/trioverse"
-                icon={<FaGithub size={18} />}
+                href="https://instagram.com/trioverse.co"
+                icon={<FaInstagram size={18} />}
               />
               <SocialIcon
-                href="https://wa.me/yournumber"
-                icon={<FaWhatsapp size={18} />}
-              />
-              <SocialIcon
-                href="mailto:contact@trio-verse.com"
+                href="mailto:trio3verse@gmail.com"
                 icon={<FaEnvelope size={18} />}
               />
             </div>

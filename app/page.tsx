@@ -49,8 +49,18 @@ export default function Home() {
       {/* شريط التنقل السفلي */}
       <FloatingDock />
 
-      {/* تأثير الـ Grid الخفيف جداً */}
-      <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center mask-[linear-gradient(180deg,white,rgba(255,255,255,0))] -z-20 opacity-20"></div>
+      <div
+        className="absolute inset-0 -z-20 opacity-[0.050]"
+        style={{
+          backgroundImage: `
+      linear-gradient(to right, #808080 1px, transparent 1px),
+      linear-gradient(to bottom, #808080 1px, transparent 1px)
+    `,
+          backgroundSize: "30px 30px",
+          maskImage: "linear-gradient(to bottom, white, transparent)",
+          WebkitMaskImage: "linear-gradient(to bottom, white, transparent)",
+        }}
+      ></div>
     </main>
   );
 }
