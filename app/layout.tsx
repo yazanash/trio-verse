@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   title: "TrioVerse Labs | Engineering Digital Ecosystems",
   description:
     "High-performance software solutions for agencies, consultants, and enterprises. We sync logic with creativity.",
-
+  metadataBase: new URL("https://trio-verse.com"),
   // الكلمات المفتاحية (Keywords)
   keywords: [
     "Software Development",
