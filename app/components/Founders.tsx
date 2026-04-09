@@ -1,5 +1,4 @@
 "use client";
-import Image from "next/image"; // استيراد Image من Next.js
 import { motion } from "framer-motion";
 
 const team = [

@@ -1,5 +1,4 @@
 "use client";
-import React from "react";
 import SolutionCard from "./SolutionCard";
 import { useLanguageStore } from "@/store/useLanguageStore";
 

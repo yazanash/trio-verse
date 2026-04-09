@@ -1,11 +1,7 @@
 "use client";
 import React from "react";
 import {
-  FaLinkedinIn,
-  FaGithub,
-  FaWhatsapp,
   FaEnvelope,
-  FaFacebook,
   FaFacebookF,
   FaInstagram,
 } from "react-icons/fa6";

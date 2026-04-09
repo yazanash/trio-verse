@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { useLanguageStore } from "@/store/useLanguageStore";
 
 export default function ContactPortal() {

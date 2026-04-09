@@ -1,11 +1,7 @@
 "use client";
-import React from "react";
 import { motion } from "framer-motion";
 import {
   Layers,
-  Database,
-  Cpu,
-  Globe,
   Smartphone,
   Monitor,
   Server,

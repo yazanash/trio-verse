@@ -1,5 +1,4 @@
 "use client";
-import React from "react";
 import { motion } from "framer-motion";
 import { Sparkles, ArrowRight, ArrowLeft } from "lucide-react";
 import { useLanguageStore } from "@/store/useLanguageStore";
