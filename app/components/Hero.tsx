@@ -35,6 +35,9 @@ const Hero = () => {
             alt="TrioVerse Logo"
             width={150}
             height={150}
+            priority 
+  fetchPriority="high" 
+  loading="eager"
             className="drop-shadow-[0_0_15px_rgba(59,130,246,0.5)]"
           />
         </div>

@@ -58,14 +58,17 @@ export default function Footer() {
             <div className="flex gap-3">
               <SocialIcon
                 href="https://facebook.com/trio3verse"
+                ariaLabel="Vist Our Facebook Page"
                 icon={<FaFacebookF size={18} />}
               />
               <SocialIcon
                 href="https://instagram.com/trioverse.co"
+                ariaLabel="Vist Our Instagram Page"
                 icon={<FaInstagram size={18} />}
               />
               <SocialIcon
                 href="mailto:trio3verse@gmail.com"
+                ariaLabel="contact us via email"
                 icon={<FaEnvelope size={18} />}
               />
             </div>
@@ -107,10 +110,19 @@ export default function Footer() {
   );
 }
 
-function SocialIcon({ href, icon }: { href: string; icon: React.ReactNode }) {
+function SocialIcon({
+  href,
+  icon,
+  ariaLabel,
+}: {
+  href: string;
+  icon: React.ReactNode;
+  ariaLabel: string;
+}) {
   return (
     <motion.a
       href={href}
+      aria-label={ariaLabel}
       target="_blank"
       rel="noopener noreferrer"
       whileHover={{ y: -3, backgroundColor: "rgba(255,255,255,0.05)" }}

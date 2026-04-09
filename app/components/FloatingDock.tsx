@@ -113,7 +113,7 @@ export default function FloatingDock() {
         >
           <div className="relative">
             <Languages size={18} />
-            <span className="absolute -top-1 -right-1 text-[7px] font-bold bg-blue-700 text-black px-1 rounded-sm uppercase">
+            <span className="absolute -top-1 -right-1 text-[7px] font-bold bg-blue-700 text-white px-1 rounded-sm uppercase">
               {lang === "en" ? "AR" : "EN"}
             </span>
           </div>
@@ -149,6 +149,7 @@ function NavButton({
 }) {
   return (
     <button
+      aria-label={`Go to ${label} section`}
       onClick={onClick}
       className={`relative p-2.5 md:px-4 md:py-2 outline-none transition-all duration-500 rounded-2xl flex items-center gap-3 ${
         active ? "text-white" : "text-slate-500 hover:text-slate-200"

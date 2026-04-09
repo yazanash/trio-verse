@@ -31,7 +31,7 @@ export default function SolutionCard({
           <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-brand-blue mb-4 block">
             {tag}
           </span>
-          <h3 className="text-2xl font-semibold mb-4 text-white/90">{title}</h3>
+          <h2 className="text-2xl font-semibold mb-4 text-white/90">{title}</h2>
           <p className="text-slate-400 font-light leading-relaxed text-sm max-w-70">
             {description}
           </p>

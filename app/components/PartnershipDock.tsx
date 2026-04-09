@@ -18,7 +18,7 @@ export default function PartnershipDock() {
       animate={{ y: 0, x: "-50%", opacity: 1 }}
       className="fixed bottom-8 left-1/2 z-50 w-fit"
     >
-      <div className="flex items-center gap-2 px-3 py-2 rounded-[24px] bg-black/60 backdrop-blur-2xl border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
+      <div className="flex items-center gap-2 px-3 py-2 rounded-3xl bg-black/60 backdrop-blur-2xl border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
         {/* زر العودة للموقع الرئيسي */}
         <DockButton
           icon={<Home size={18} />}
