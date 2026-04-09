@@ -31,7 +31,7 @@ export default function FloatingDock() {
     const observerOptions = {
       root: null,
       threshold: 0.4, // زدنا النسبة عشان التبديل يكون أدق
-      rootMargin: "-20% 0px -20% 0px",
+      rootMargin: "-10% 0px -20% 0px",
     };
 
     const observerCallback = (entries: IntersectionObserverEntry[]) => {

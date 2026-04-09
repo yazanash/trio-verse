@@ -160,5 +160,61 @@
     "standards": "Standards",
     "tech": "Tech",
     "cta": "Sync Now"
+  },
+  "partnership": {
+    "hero": {
+      "title_1": "The Tech Arm",
+      "title_2": "For Your Business Growth.",
+      "description": "At TrioVerse Labs, we don't just deliver software; we engineer sustainable digital assets. We are the strategic partner that gives you the confidence to scale globally.",
+      "signature": "We don't just write code; we engineer growth engines.",
+      "see_how": "See how we work"
+    },
+    "problem": {
+      "title": "Does this sound familiar?",
+      "p1": "You lose major deals because you lack a reliable tech team to back your high ambitions.",
+      "p2": "Your clients request complex systems that you are forced to decline due to execution challenges.",
+      "p3": "You hesitate to offer software solutions due to technical instability and weak post-launch support."
+    },
+    "values": {
+      "label": "Engineering Values",
+      "v1": {
+        "title": "Stability & Operational Efficiency",
+        "desc": "We understand that a moment of downtime means lost opportunities. We guarantee a solid operational environment that doesn't shake under high data pressure.",
+        "goal_label": "Goal",
+        "goal_text": "High-performance systems (99.9% Uptime) and instant responsiveness.",
+        "value_label": "Value",
+        "value_text": "Enhancing client loyalty to your brand through a seamless experience."
+      },
+      "v2": {
+        "title": "Absolute Professionalism",
+        "desc": "Professionalism is our lifestyle. We believe in total transparency as a tool for long-term partnership, ensuring global standards in every line of code.",
+        "goal_label": "Goal",
+        "goal_text": "Precise lifecycle management and absolute data protection.",
+        "value_label": "Value",
+        "value_text": "Transforming ideas into protected, scalable digital assets."
+      }
+    },
+    "trust": {
+      "label": "Internal Lab Projects",
+      "title": "Our expertise isn't theoretical.. we build our own products too.",
+      "desc": "We don't just build systems for clients; we develop our own products like Uniceps. This ensures our partners that we don't just understand tech—we understand how it translates into"
+    },
+    "trust_highlight": "actual growth and sustainable profits.",
+    "models": {
+      "title": "Partnership Models",
+      "m1_title": "Referral",
+      "m1_desc": "Generous commissions in appreciation of your trust in recommending us.",
+      "m2_title": "Strategic",
+      "m2_desc": "We act as your certified tech arm under your own brand (White Label).",
+      "m3_title": "Joint Dev",
+      "m3_desc": "Building major projects with deep integration between your vision and our engineering."
+    },
+    "cta": {
+      "title": "Let's Engineer the Future Together",
+      "desc": "We look for partners who share our passion for technical excellence. Are you ready?",
+      "primary": "Start a Partnership Talk",
+      "secondary": "Book an Exploration Session",
+      "micro_copy": "No commitment required — just an open discussion about strategic collaboration."
+    }
   }
 }
