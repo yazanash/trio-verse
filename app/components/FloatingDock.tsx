@@ -122,6 +122,7 @@ export default function FloatingDock() {
           whileHover={{ scale: 1.05, y: -2 }}
           whileTap={{ scale: 0.95 }}
           onClick={() => scrollTo("partners")}
+          aria-label={`Talk to us `}
           className="ml-2 bg-logo-gradient px-4 py-2 md:px-6 md:py-2.5 rounded-full text-white shadow-lg flex items-center justify-center transition-all"
         >
           <span className="hidden md:block text-sm text-nowrap font-bold tracking-tight">
