@@ -277,18 +277,26 @@ export default function PartnershipPage() {
 
         <div className="flex flex-col items-center gap-6">
           <div className="flex flex-col md:flex-row gap-4 w-full justify-center">
-            <button className="bg-blue-600 text-white px-10 py-5 rounded-full font-bold hover:bg-blue-500 transition-all shadow-2xl shadow-blue-500/20 active:scale-95 text-lg flex items-center justify-center gap-2">
+            {/* الزر الأساسي: يفتح الإيميل دغري */}
+            <a
+              href={`mailto:trio3verse@gmail.com?subject=${encodeURIComponent(isAr ? "طلب شراكة - TrioVerse" : "Partnership Inquiry - TrioVerse")}&body=${encodeURIComponent(isAr ? "مرحباً فريق TrioVerse، نود مناقشة فرصة شراكة معكم..." : "Hello TrioVerse Team, we would like to discuss a partnership opportunity...")}`}
+              className="bg-blue-600 text-white px-10 py-5 rounded-full font-bold hover:bg-blue-500 transition-all shadow-2xl shadow-blue-500/20 active:scale-95 text-lg flex items-center justify-center gap-2"
+            >
               {p.cta.primary}
               <ArrowRight className={`w-5 h-5 ${isAr ? "rotate-180" : ""}`} />
-            </button>
-            <button className="border border-slate-700 text-slate-300 px-10 py-5 rounded-full font-bold hover:bg-slate-900 transition-all active:scale-95 text-lg">
+            </a>
+
+            {/* الزر الثانوي: يمكنك توجيهه للرئيسية أو قسم آخر */}
+            <button
+              onClick={() => (window.location.href = "/")}
+              className="border border-slate-700 text-slate-300 px-10 py-5 rounded-full font-bold hover:bg-slate-900 transition-all active:scale-95 text-lg"
+            >
               {p.cta.secondary}
             </button>
           </div>
           <p className="text-slate-500 text-sm italic">{p.cta.micro_copy}</p>
         </div>
       </section>
-
       <footer className="pb-32 pt-12 text-center text-slate-700 border-t border-slate-900/50 text-xs tracking-widest uppercase">
         © {new Date().getFullYear()} TrioVerse Labs // Engineering Growth
       </footer>
